@@ -11,7 +11,7 @@ GetMovieByGenresResponse _$GetMovieByGenresResponseFromJson(
     GetMovieByGenresResponse(
       json['page'] as int?,
       (json['results'] as List<dynamic>?)
-          ?.map((e) => GetMoviesByGenresVO.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => GetNowPlayingVO.fromJson(e as Map<String, dynamic>))
           .toList(),
       json['total_pages'] as int?,
       json['total_results'] as int?,

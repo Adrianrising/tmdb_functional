@@ -1,5 +1,4 @@
 import 'package:moviedb_functional/data/vos/get_actors_vo/get_actors_vo.dart';
-import 'package:moviedb_functional/data/vos/get_movies_by_genres_vo/get_movies_by_genres_vo.dart';
 import 'package:moviedb_functional/data/vos/get_now_playing_vo/get_now_playing_vo.dart';
 
 import '../../../data/vos/get_credits_cast_vo/get_credits_cast_vo.dart';
@@ -21,7 +20,7 @@ abstract class TmdbDataAgent{
 
   Future<List<GetGenresVO>?> getGenres();
 
-  Future<List<GetMoviesByGenresVO>?> getMoviesByGenre(int genreId,int page);
+  Future<List<GetNowPlayingVO>?> getMoviesByGenre(int genreId,int page);
 
   Future<List<GetNowPlayingVO>?> getPopularMovies(int page);
 

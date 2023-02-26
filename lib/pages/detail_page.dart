@@ -82,7 +82,7 @@ class _DetailPageState extends State<DetailPage> {
             ),
           )
         : Scaffold(
-            backgroundColor: kSecondaryColor,
+            backgroundColor: Colors.black,
             body: (detailData == null)
                 ? const Center(child: CircularProgressIndicator())
                 : NestedScrollView(
@@ -139,7 +139,7 @@ class _DetailPageState extends State<DetailPage> {
                           (cast.isEmpty)
                               ? const Center(child: CircularProgressIndicator())
                               : EasyScrollPersonWidget(
-                                  cast: cast, leftTitle: actorText),
+                                  cast: cast, leftTitle: actorText,color: Colors.black,),
 
                           //about film title
                           Padding(
@@ -168,6 +168,7 @@ class _DetailPageState extends State<DetailPage> {
                             crew: crew,
                             leftTitle: creatorsText,
                             rightTitle: moreCreatorsText,
+                            color: Colors.black,
                           ),
 
                           //related movie section

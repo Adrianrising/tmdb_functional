@@ -42,12 +42,14 @@ const int easyScrollStarCount=5;
 
 //banner section
 const double bannerHeight=200;
+const double bannerWholeSectionHeight=230;
 const double bannerPlayButtonSize=50;
 const double bannerMovieNameSize=30;
 const int bannerMoviesCounts=5;
 
 //best movies and serial section
 const double bestMovieSectionHeight=250;
+const double bestPopularMoviesTitleFontSize=13;
 
 //detail page
 const double sliverAppBarHeight=300;

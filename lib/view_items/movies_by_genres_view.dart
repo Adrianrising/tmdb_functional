@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:moviedb_functional/constant/dimens.dart';
 import 'package:moviedb_functional/data/apply/tmdb_apply.dart';
 import 'package:moviedb_functional/data/apply/tmdb_apply_impl.dart';
+import 'package:moviedb_functional/data/vos/get_now_playing_vo/get_now_playing_vo.dart';
 
 import '../data/vos/get_genres_vo/get_genres_vo.dart';
-import '../data/vos/get_movies_by_genres_vo/get_movies_by_genres_vo.dart';
 import '../easy_widget/easy_scrollable_widget.dart';
 
 class MoviesByGenresView extends StatefulWidget {
@@ -18,22 +18,30 @@ class _MoviesByGenresViewState extends State<MoviesByGenresView> {
   final TmdbApply tmDbApply = TmdbApplyImpl();
   final ScrollController scrollController = ScrollController();
   List<GetGenresVO> genre = [];
-  List<GetMoviesByGenresVO> moviesByGenre = [];
+  List<GetNowPlayingVO> moviesByGenre = [];
   int movieId = 0;
   int page = 1;
 
   @override
   void initState() {
     tmDbApply.getGenres().then((value) {
-      setState(() {
-        genre = value ?? [];
-        movieId = genre[0].id ?? 0;
-        tmDbApply.getMoviesByGenre(movieId, page).then((value) {
-          setState(() {
-            moviesByGenre = value ?? [];
+      if(mounted){
+        setState(() {
+          genre = value ?? [];
+          movieId = genre[0].id ?? 0;
+          tmDbApply.getMoviesByGenre(movieId, page).then((value) {
+            setState(() {
+              moviesByGenre = value ?? [];
+            });
           });
+          // tmDbApply.getMoviesByGenreFromBoxAsStream(movieId, page).listen((event) {
+          //   setState(() {
+          //     moviesByGenre=event??[];
+          //   });
+          // });
         });
-      });
+      }
+
     });
 
     scrollController.addListener(() {

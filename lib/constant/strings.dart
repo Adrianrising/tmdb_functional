@@ -1,7 +1,6 @@
 //default image
 const String defaultImg='https://pusat.edu.np/wp-content/uploads/2022/09/default-image.jpg';
 
-//home page
 //app bar
 const String appBarTitle='Discover';
 
@@ -19,9 +18,9 @@ const String descriptionText='Description';
 const String creatorsText='creators';
 const String moreCreatorsText='more creators';
 const String relatedMoviesText='Related Movies';
+const String bestMoviesTitle='best popular movies and serials';
 
 //show case view
-
 const String showCaseText='showcases';
 const String moreShowCaseText='more showcases';
 

@@ -21,10 +21,17 @@ class _BestActorsViewState extends State<BestActorsView> {
 
   @override
   void initState() {
-    tmdDbApply.getActors(page).then((value) {
-      setState(() {
-        actors = value ?? [];
-      });
+    // tmdDbApply.getActors(page).then((value) {
+    //   setState(() {
+    //     actors = value ?? [];
+    //   });
+    // });
+    tmdDbApply.getActorsFromBoxAsStream(page).listen((event) {
+      if(mounted){
+        setState(() {
+          actors=event??[];
+        });
+      }
     });
     super.initState();
   }
@@ -35,6 +42,7 @@ class _BestActorsViewState extends State<BestActorsView> {
         leftTitle: bestActorsText,
         rightTitle: moreActorsText,
         actors: actors,
-        height: bestSectionHeight);
+        height: bestSectionHeight,
+    color: Colors.black,);
   }
 }

@@ -9,3 +9,6 @@ const Color kTransparentColor=Colors.transparent;
 //banner section
 const Color bannerMovieNameColor=Colors.grey;
 const Color bannerActiveDotColor=Colors.amber;
+
+//app specific
+const Color appColor=Colors.black;

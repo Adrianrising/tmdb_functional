@@ -22,10 +22,17 @@ class _BestMovieScrollViewState extends State<BestMovieScrollView> {
 
   @override
   void initState() {
-    tmdbApply.getNowPlaying(page).then((value) {
-      setState(() {
-        bestMovies = value ?? [];
-      });
+    // tmdbApply.getNowPlaying(page).then((value) {
+    //   setState(() {
+    //     bestMovies = value ?? [];
+    //   });
+    // });
+    tmdbApply.getNowPlayingFromBoxAsStream(page).listen((event) {
+      if(mounted){
+        setState(() {
+          bestMovies=event??[];
+        });
+      }
     });
 
     scrollController.addListener(() {

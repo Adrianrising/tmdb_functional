@@ -23,10 +23,17 @@ class _ShowCaseViewState extends State<ShowCaseView> {
 
   @override
   void initState() {
-    tmdDbApply.getPopularMovies(page).then((value) {
-      setState(() {
-        popularMovies = value ?? [];
-      });
+    // tmdDbApply.getPopularMovies(page).then((value) {
+    //   setState(() {
+    //     popularMovies = value ?? [];
+    //   });
+    // });
+    tmdDbApply.getPopularMoviesFromBoxAsStream(page).listen((event) {
+      if(mounted){
+        setState(() {
+          popularMovies=event??[];
+        });
+      }
     });
 
     super.initState();

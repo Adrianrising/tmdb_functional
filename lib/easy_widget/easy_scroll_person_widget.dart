@@ -166,18 +166,20 @@ class _EasyScrollPersonWidgetState extends State<EasyScrollPersonWidget> {
                                                         .profilePath ??
                                                     "")
                                                 .completeImage())),
-                        Positioned(
-                          bottom: 20,
-                          left: 10,
-                          child: EasyTextWidget(
-                            text: (widget.cast.isNotEmpty)
-                                ? '${widget.cast[index].name}\nas\n${widget.cast[index].character}'
-                                : (widget.crew.isNotEmpty)
-                                    ? '${widget.crew[index].name}\nas\n${widget.crew[index].job}'
-                                    : (widget.popularMovies.isNotEmpty)
-                                        ? '${widget.popularMovies[index].originalTitle}\nreleased in\n${widget.popularMovies[index].releaseDate}'
-                                        : '${widget.actors[index].name}\npopularity ${widget.actors[index].popularity}',
-                            fontSize: 20,
+                        Padding(
+                          padding: const EdgeInsets.only(left: sp10x, bottom: sp20x),
+                          child: Align(
+                            alignment: Alignment.bottomLeft,
+                            child: EasyTextWidget(
+                              text: (widget.cast.isNotEmpty)
+                                  ? '${widget.cast[index].name}\nas\n${widget.cast[index].character}'
+                                  : (widget.crew.isNotEmpty)
+                                      ? '${widget.crew[index].name}\nas\n${widget.crew[index].job}'
+                                      : (widget.popularMovies.isNotEmpty)
+                                          ? '${widget.popularMovies[index].originalTitle}\nreleased in\n${widget.popularMovies[index].releaseDate}'
+                                          : '${widget.actors[index].name}\npopularity ${widget.actors[index].popularity}',
+                              fontSize: 20,
+                            ),
                           ),
                         ),
                         (widget.popularMovies.isNotEmpty)

@@ -5,7 +5,6 @@ import 'package:moviedb_functional/easy_widget/easy_cached_network_image.dart';
 import 'package:moviedb_functional/easy_widget/easy_text_widget.dart';
 import 'package:moviedb_functional/pages/detail_page.dart';
 import 'package:moviedb_functional/utils/extension.dart';
-import '../data/vos/get_movies_by_genres_vo/get_movies_by_genres_vo.dart';
 import '../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
 import 'easy_rating_bar_widget.dart';
 
@@ -18,7 +17,7 @@ class EasyScrollableWidget extends StatelessWidget {
 
   final int index;
   final List<GetNowPlayingVO> movieList;
-  final List<GetMoviesByGenresVO> genreMovies;
+  final List<GetNowPlayingVO> genreMovies;
 
   @override
   Widget build(BuildContext context) {

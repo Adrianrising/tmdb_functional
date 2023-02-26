@@ -14,7 +14,7 @@ class EasyLinearGradientContainerWidget extends StatelessWidget {
           gradient: LinearGradient(
               colors: [
                 Colors.transparent,
-                kSecondaryColor
+                Colors.black
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter

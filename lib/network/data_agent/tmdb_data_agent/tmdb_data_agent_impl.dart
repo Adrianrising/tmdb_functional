@@ -5,7 +5,6 @@ import 'package:moviedb_functional/data/vos/get_credits_cast_vo/get_credits_cast
 import 'package:moviedb_functional/data/vos/get_credits_crew_vo/get_credits_crew_vo.dart';
 import 'package:moviedb_functional/data/vos/get_details_vo/get_details_vo.dart';
 import 'package:moviedb_functional/data/vos/get_genres_vo/get_genres_vo.dart';
-import 'package:moviedb_functional/data/vos/get_movies_by_genres_vo/get_movies_by_genres_vo.dart';
 import 'package:moviedb_functional/data/vos/get_now_playing_vo/get_now_playing_vo.dart';
 import 'package:moviedb_functional/network/data_agent/tmdb_data_agent/tmdb_data_agent.dart';
 
@@ -60,7 +59,7 @@ class TmdbDataAgentImpl extends TmdbDataAgent{
       .first;
 
   @override
-  Future<List<GetMoviesByGenresVO>?> getMoviesByGenre(int genreId, int page)=>_tmdbApi
+  Future<List<GetNowPlayingVO>?> getMoviesByGenre(int genreId, int page)=>_tmdbApi
       .getMoviesByGenre(genreId, kApiKey, page)
       .asStream()
       .map((event) => event.results)

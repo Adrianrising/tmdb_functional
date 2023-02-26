@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:moviedb_functional/data/vos/get_now_playing_vo/get_now_playing_vo.dart';
 
-import '../../../data/vos/get_movies_by_genres_vo/get_movies_by_genres_vo.dart';
 
 part 'get_movies_by_genres_response.g.dart';
 @JsonSerializable()
@@ -9,7 +9,7 @@ class GetMovieByGenresResponse{
   int ? page;
 
   @JsonKey(name: 'results')
-  List<GetMoviesByGenresVO> ? results;
+  List<GetNowPlayingVO> ? results;
 
   @JsonKey(name: 'total_pages')
   int ? totalPages;

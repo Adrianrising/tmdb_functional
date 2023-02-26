@@ -1,24 +1,39 @@
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:moviedb_functional/data/vos/get_now_playing_vo/get_now_playing_vo.dart';
 
+import '../../../constant/hive_constant.dart';
 import 'known_for.dart';
 part 'get_actors_vo.g.dart';
 @JsonSerializable()
+@HiveType(typeId: kActorsHiveType)
 class GetActorsVO{
+
   @JsonKey(name: 'adult')
+  @HiveField(0)
   bool ? adult;
   @JsonKey(name: 'gender')
+  @HiveField(1)
   int ? gender;
   @JsonKey(name: 'id')
+  @HiveField(2)
   int ? id;
+
   @JsonKey(name: 'known_for')
-  List<KnownFor> ? knownFor;
+  @HiveField(3)
+  List<GetNowPlayingVO> ? knownFor;
+
   @JsonKey(name: 'known_for_department')
+  @HiveField(4)
   String ? knownForDepartment;
   @JsonKey(name: 'name')
+  @HiveField(5)
   String ? name;
   @JsonKey(name: 'popularity')
+  @HiveField(6)
   num ? popularity;
   @JsonKey(name: 'profile_path')
+  @HiveField(7)
   String ? profilePath;
 
   GetActorsVO(this.adult, this.gender, this.id, this.knownFor,
