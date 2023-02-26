@@ -109,6 +109,7 @@ class _DetailPageState extends State<DetailPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           MovieGenresNameAndRunTimeView(detailData: detailData),
+
                           //story line title
                           Padding(
                             padding:

@@ -20,49 +20,55 @@ class AboutFilmRightSideView extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(right: sp10x),
         height: aboutFilmHeight,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            EasyTextWidget(
-              text: detailData?.originalTitle ?? "",
-              fontSize: aboutFilmFontSize,
-            ),
-            const SizedBox(
-              height: sp20x,
-            ),
-            Wrap(
-              children: [
-                for (var obj in detailData?.genres ?? [])
-                  EasyTextWidget(
-                    text: '${obj.name ?? ""},',
-                    fontSize: aboutFilmFontSize,
-                  ),
-              ]
-            ),
-            const SizedBox(
-              height: sp20x,
-            ),
-            EasyTextWidget(
-              text: detailData
-                  ?.productionCountries?[0].name ??
-                  "",
-              fontSize: aboutFilmFontSize,
-            ),
-            const SizedBox(
-              height: sp20x,
-            ),
-            EasyTextWidget(
-              text: detailData?.releaseDate ?? "",
-              fontSize: aboutFilmFontSize,
-            ),
-            const SizedBox(
-              height: sp20x,
-            ),
-            EasyTextWidget(
-              text: detailData?.overview ?? "",
-              fontSize: aboutFilmFontSize,
-            ),
-          ],
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              EasyTextWidget(
+                text: detailData?.originalTitle ?? "",
+                fontSize: aboutFilmFontSize,
+              ),
+              const SizedBox(
+                height: sp20x,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    for (var obj in detailData?.genres ?? [])
+                      EasyTextWidget(
+                        text: '${obj.name ?? ""},',
+                        fontSize: aboutFilmFontSize,
+                      ),
+                  ]
+                ),
+              ),
+              const SizedBox(
+                height: sp20x,
+              ),
+              EasyTextWidget(
+                text: detailData
+                    ?.productionCountries?[0].name ??
+                    "",
+                fontSize: aboutFilmFontSize,
+              ),
+              const SizedBox(
+                height: sp20x,
+              ),
+              EasyTextWidget(
+                text: detailData?.releaseDate ?? "",
+                fontSize: aboutFilmFontSize,
+              ),
+              const SizedBox(
+                height: sp20x,
+              ),
+              EasyTextWidget(
+                text: detailData?.overview ?? "",
+                fontSize: aboutFilmFontSize,
+              ),
+            ],
+          ),
         ),
       ),
     );
