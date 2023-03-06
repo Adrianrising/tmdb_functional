@@ -41,7 +41,6 @@ class EasyScrollPersonWidget extends StatefulWidget {
 
 class _EasyScrollPersonWidgetState extends State<EasyScrollPersonWidget> {
   final ScrollController scrollController = ScrollController();
-  final ScrollController controllerThatDoesNothing = ScrollController();
   final ScrollController controllerForActors = ScrollController();
   final TmdbApply tmdDbApply = TmdbApplyImpl();
   int page = 1;
@@ -59,7 +58,9 @@ class _EasyScrollPersonWidgetState extends State<EasyScrollPersonWidget> {
               for (var element in temp) {
                 widget.popularMovies.add(element);
               }
-              setState(() {});
+              if(mounted){
+                setState(() {});
+              }
             }
           });
         }
@@ -75,7 +76,9 @@ class _EasyScrollPersonWidgetState extends State<EasyScrollPersonWidget> {
               for (var element in temp) {
                 widget.actors.add(element);
               }
-              setState(() {});
+              if(mounted){
+                setState(() {});
+              }
             }
           });
         }
@@ -87,7 +90,6 @@ class _EasyScrollPersonWidgetState extends State<EasyScrollPersonWidget> {
   @override
   void dispose() {
     scrollController.dispose();
-    controllerThatDoesNothing.dispose();
     controllerForActors.dispose();
     super.dispose();
   }
@@ -101,6 +103,7 @@ class _EasyScrollPersonWidgetState extends State<EasyScrollPersonWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
+          //title
           Padding(
             padding: const EdgeInsets.only(
                 left: sp10x, top: sp10x, bottom: sp15x, right: sp10x),
@@ -118,13 +121,14 @@ class _EasyScrollPersonWidgetState extends State<EasyScrollPersonWidget> {
               ],
             ),
           ),
+          //scroll
           Expanded(
             child: ListView.builder(
               controller: (widget.popularMovies.isNotEmpty)
                   ? scrollController
                   : (widget.actors.isNotEmpty)
                       ? controllerForActors
-                      : controllerThatDoesNothing,
+                      : null,
               scrollDirection: Axis.horizontal,
               itemCount: (widget.cast.isNotEmpty)
                   ? widget.cast.length
@@ -134,6 +138,7 @@ class _EasyScrollPersonWidgetState extends State<EasyScrollPersonWidget> {
                           ? widget.popularMovies.length
                           : widget.actors.length,
               itemBuilder: (context, index) {
+                //scroll item
                 return Container(
                   margin: const EdgeInsets.only(
                       left: 10, right: sp3x, bottom: sp40x),
