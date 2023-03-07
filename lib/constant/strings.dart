@@ -18,6 +18,7 @@ const String descriptionText='Description';
 const String creatorsText='creators';
 const String moreCreatorsText='more creators';
 const String relatedMoviesText='Related Movies';
+const String votesText='VOTES';
 const String bestMoviesTitle='best popular movies and serials';
 
 //show case view

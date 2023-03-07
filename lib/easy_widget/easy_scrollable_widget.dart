@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:moviedb_functional/constant/dimens.dart';
 import 'package:moviedb_functional/easy_widget/easy_cached_network_image.dart';

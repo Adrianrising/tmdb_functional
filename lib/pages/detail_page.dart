@@ -174,7 +174,7 @@ class DetailPage extends StatelessWidget {
                             fontSize: relatedMovieTitleFontSize,
                           ),
                         ),
-                        RelatedMoviesSectionView(movieId: movieId),
+                        const RelatedMoviesSectionView(),
                         const SizedBox(
                           height: sp30x,
                         ),

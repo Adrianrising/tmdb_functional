@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:moviedb_functional/data/apply/tmdb_apply.dart';
-import 'package:moviedb_functional/data/apply/tmdb_apply_impl.dart';
 import 'package:moviedb_functional/data/vos/get_details_vo/get_details_vo.dart';
-import 'package:moviedb_functional/easy_widget/easy_linear_gradient_container_widget.dart';
 import 'package:moviedb_functional/easy_widget/easy_rating_bar_widget.dart';
 import 'package:moviedb_functional/easy_widget/easy_text_widget.dart';
 import 'package:moviedb_functional/utils/extension.dart';
-
-import '../../../constant/colors.dart';
 import '../../../constant/dimens.dart';
 import '../../../constant/strings.dart';
-import '../../../easy_widget/easy_cached_network_image.dart';
 
 class SliverAppBarBottomView extends StatelessWidget {
   const SliverAppBarBottomView({
@@ -54,7 +48,7 @@ class SliverAppBarBottomView extends StatelessWidget {
                       EasyRatingBarWidget(
                           rating: (detailData?.voteAverage ?? 0) / 2),
                       EasyTextWidget(
-                        text: '${detailData?.voteCount} VOTES',
+                        text: '${detailData?.voteCount} $votesText',
                         fontSize: voteCountFontSize,
                         color: Colors.grey,
                       ),

@@ -11,83 +11,69 @@ import 'package:moviedb_functional/utils/extension.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-
-class MovieBannerView extends StatefulWidget {
+class MovieBannerView extends StatelessWidget {
   const MovieBannerView({
     super.key,
   });
 
   @override
-  State<MovieBannerView> createState() => _MovieBannerViewState();
-}
-
-class _MovieBannerViewState extends State<MovieBannerView> {
-  final PageController _controller = PageController();
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Selector<HomePageBloc,List<GetNowPlayingVO>>(
-      selector: (_,obj)=>obj.gBannerMovies,
-      builder: (context,bannerMovies,child)=>Column(
+    return Selector<HomePageBloc, List<GetNowPlayingVO>>(
+      selector: (_, obj) => obj.gBannerMovies,
+      builder: (context, bannerMovies, child) => Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           (bannerMovies.isEmpty)
               ? const Center(
-            child: CircularProgressIndicator(),
-          )
+                  child: CircularProgressIndicator(),
+                )
               : SizedBox(
-            height: bannerHeight,
-            child: PageView.builder(
-              controller: _controller,
-              itemCount: bannerMovies.length,
-              itemBuilder: (context, index) {
-                //Movie banners
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>
-                          DetailPage(movieId: bannerMovies[index].id ?? 0),
-                    ));
-                  },
-                  child: Stack(
-                    children: [
-                      Positioned.fill(
-                          child: EasyCachedNetworkImage(
-                            img: (bannerMovies[index].backdropPath ?? "")
-                                .completeImage(),
-                          )),
-                      const EasyLinearGradientContainerWidget(),
-                      const Positioned.fill(
-                          child: Icon(Icons.play_circle,
-                              color: kPlayButtonColor,
-                              size: bannerPlayButtonSize)),
-                      Positioned(
-                          bottom: sp25x,
-                          left: sp10x,
-                          right: sp10x,
-                          child: EasyTextWidget(
-                            text: '${bannerMovies[index].originalTitle}',
-                            fontSize: bannerMovieNameSize,
-                            color: bannerMovieNameColor,
-                          )),
-                    ],
+                  height: bannerHeight,
+                  child: PageView.builder(
+                    controller: context.read<HomePageBloc>().bannerScroll,
+                    itemCount: bannerMovies.length,
+                    itemBuilder: (context, index) {
+                      //Movie banners
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => DetailPage(
+                                movieId: bannerMovies[index].id ?? 0),
+                          ));
+                        },
+                        child: Stack(
+                          children: [
+                            Positioned.fill(
+                                child: EasyCachedNetworkImage(
+                              img: (bannerMovies[index].backdropPath ?? "")
+                                  .completeImage(),
+                            )),
+                            const EasyLinearGradientContainerWidget(),
+                            const Positioned.fill(
+                                child: Icon(Icons.play_circle,
+                                    color: kPlayButtonColor,
+                                    size: bannerPlayButtonSize)),
+                            Positioned(
+                                bottom: sp25x,
+                                left: sp10x,
+                                right: sp10x,
+                                child: EasyTextWidget(
+                                  text: '${bannerMovies[index].originalTitle}',
+                                  fontSize: bannerMovieNameSize,
+                                  color: bannerMovieNameColor,
+                                )),
+                          ],
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-          ),
+                ),
           SmoothPageIndicator(
-            controller: _controller,
+            controller: context.read<HomePageBloc>().bannerScroll,
             count: bannerMoviesCounts,
             axisDirection: Axis.horizontal,
             onDotClicked: (index) => (index) {
-              _controller.animateToPage(index,
+              context.read<HomePageBloc>().bannerScroll.animateToPage(index,
                   duration: const Duration(seconds: 1), curve: Curves.ease);
             },
             effect: const ScrollingDotsEffect(

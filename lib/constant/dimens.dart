@@ -56,7 +56,7 @@ const double sliverAppBarHeight=300;
 const double sliverBottomHeight=100;
 const double publishedYearWidth=80;
 const double publishedYearHeight=35;
-const double aboutFilmHeight=500;
+const double aboutFilmHeight=400;//500
 const double aboutFilmLeftSideWidth=110;
 
 

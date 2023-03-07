@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:moviedb_functional/bloc/home_page_bloc.dart';
 import 'package:moviedb_functional/constant/colors.dart';
 import 'package:moviedb_functional/constant/dimens.dart';
+import 'package:moviedb_functional/easy_widget/easy_text_widget.dart';
 import 'package:moviedb_functional/view_items/home_page_view/best_actors_view/best_actors_view.dart';
 import 'package:moviedb_functional/view_items/home_page_view/show_case_view/show_case_view.dart';
 import 'package:provider/provider.dart';
 
+import '../constant/strings.dart';
 import '../view_items/home_page_view/banner_view/movie_banner_view.dart';
 import '../view_items/home_page_view/best_movies_view/best_popular_movie_item_view.dart';
 import '../view_items/home_page_view/movie_showtime_view/movie_show_time_card_view.dart';
@@ -21,7 +23,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kSecondaryColor,
         centerTitle: true,
-        title: const Text('Discover'),
+        title:const EasyTextWidget(text: appBarTitle,fontSize: 20),
         leading: const Icon(Icons.menu, size: fz30),
         actions: const [Icon(Icons.search, size: fz30), SizedBox(width: sp30x)],
       ),
