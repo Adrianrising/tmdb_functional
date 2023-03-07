@@ -3,9 +3,9 @@ import 'package:moviedb_functional/constant/dimens.dart';
 import 'package:moviedb_functional/data/apply/tmdb_apply.dart';
 import 'package:moviedb_functional/data/apply/tmdb_apply_impl.dart';
 
-import '../data/vos/get_genres_vo/get_genres_vo.dart';
-import '../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
-import '../easy_widget/easy_scrollable_widget.dart';
+import '../../../data/vos/get_genres_vo/get_genres_vo.dart';
+import '../../../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
+import '../../../easy_widget/easy_scrollable_widget.dart';
 
 class MoviesByGenresView extends StatefulWidget {
   const MoviesByGenresView({Key? key}) : super(key: key);
@@ -124,119 +124,6 @@ class _MoviesByGenresViewState extends State<MoviesByGenresView> {
   }
 }
 
-// class _MoviesByGenresViewState extends State<MoviesByGenresView> {
-//   final TmdbApply tmDbApply = TmdbApplyImpl();
-//   final ScrollController scrollController = ScrollController();
-//
-//   @override
-//   void initState() {
-//     // tmDbApply.getGenres().then((value) {
-//     //   if(mounted){
-//     //     setState(() {
-//     //       genre = value ?? [];
-//     //       movieId = genre[0].id ?? 0;
-//     //       tmDbApply.getMoviesByGenre(movieId, page).then((value) {
-//     //         setState(() {
-//     //           moviesByGenre = value ?? [];
-//     //         });
-//     //       });
-//     //     });
-//     //   }
-//     //
-//     // });
-//
-//     scrollController.addListener(() {
-//       if (scrollController.position.atEdge) {
-//         if (scrollController.position.pixels != 0) {
-//           context.read<HomePageBloc>().genreMovieIncrementPage();
-//           tmDbApply
-//               .getMoviesByGenre(context.read<HomePageBloc>().gGenreMovieId,
-//                   context.read<HomePageBloc>().gGenreMovieId)
-//               .then((value) {
-//             final temp = value ?? [];
-//             if (temp.isNotEmpty) {
-//               context.read<HomePageBloc>().addGenreMovies(temp);
-//             }
-//           });
-//         }
-//       }
-//     });
-//
-//     super.initState();
-//   }
-//
-//   @override
-//   void dispose() {
-//     scrollController.dispose();
-//     super.dispose();
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return DefaultTabController(
-//     length:context.read<HomePageBloc>().gGenre.length,
-//     child: SizedBox(
-//       height: moviesByGenreSectionHeight,
-//       width: double.infinity,
-//       child: Column(
-//         children: [
-//           //tab bar
-//           Selector<HomePageBloc,List<GetGenresVO>>(
-//             selector: (_,obj)=>obj.gGenre,
-//             builder: (context,genre,_){
-//               print('selector tab bar');
-//               return TabBar(
-//                 indicatorColor: Colors.amber,
-//                 isScrollable: true,
-//                 tabs: genre.map((e) => Tab(text: e.name)).toList(),
-//                 onTap: (index) => tmDbApply
-//                     .getMoviesByGenre(genre[index].id ?? 0, context.read<HomePageBloc>().gGenreMoviePage)
-//                     .then((value) {
-//                   context.read<HomePageBloc>().addGenreMovies(value??[]);
-//                   // setState(() {
-//                   //   moviesByGenre = value ?? [];
-//                   // });
-//                 }),
-//               );
-//             },
-//           ),
-//
-//           //tab bar view
-//           Selector<HomePageBloc,List<GetNowPlayingVO>>(
-//             selector: (_,obj)=>obj.gMovieByGenre,
-//             builder: (context, moviesByGenre, _){
-//               print('selector tab bar view');
-//               return Expanded(
-//                 child: Container(
-//                   padding: const EdgeInsets.symmetric(vertical: sp15x),
-//                   color: Colors.blueGrey.shade900,
-//                   child: TabBarView(
-//                     children: [
-//                       for (var i = 0; i < context.read<HomePageBloc>().gGenre.length; i++)
-//                         ListView.builder(
-//                           controller: scrollController,
-//                           scrollDirection: Axis.horizontal,
-//                           itemCount: moviesByGenre.length,
-//                           itemBuilder: (context, index) {
-//                             return EasyScrollableWidget(
-//                               index: index,
-//                               genreMovies: moviesByGenre,
-//                             );
-//                           },
-//                         ),
-//                     ],
-//                   ),
-//                 ),
-//               );
-//             },
-//
-//           )
-//         ],
-//       ),
-//     ),
-//       );
-//   }
-// }
 
 //Column(
 //         children: [

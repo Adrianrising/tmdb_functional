@@ -5,8 +5,8 @@ import 'package:moviedb_functional/data/apply/tmdb_apply.dart';
 import 'package:moviedb_functional/data/apply/tmdb_apply_impl.dart';
 import 'package:moviedb_functional/easy_widget/easy_scroll_person_widget.dart';
 
-import '../constant/dimens.dart';
-import '../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
+import '../../../constant/dimens.dart';
+import '../../../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
 
 class ShowCaseView extends StatefulWidget {
   const ShowCaseView({Key? key}) : super(key: key);

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:moviedb_functional/bloc/home_page_bloc.dart';
 import 'package:moviedb_functional/constant/colors.dart';
 import 'package:moviedb_functional/constant/dimens.dart';
-import 'package:moviedb_functional/view_items/best_actors_view.dart';
-import 'package:moviedb_functional/view_items/show_case_view.dart';
+import 'package:moviedb_functional/view_items/home_page_view/best_actors_view/best_actors_view.dart';
+import 'package:moviedb_functional/view_items/home_page_view/show_case_view/show_case_view.dart';
 import 'package:provider/provider.dart';
 
-import '../view_items/best_popular_movie_item_view.dart';
-import '../view_items/movie_banner_view.dart';
-import '../view_items/movie_show_time_card_view.dart';
-import '../view_items/movies_by_genres_view.dart';
+import '../view_items/home_page_view/banner_view/movie_banner_view.dart';
+import '../view_items/home_page_view/best_movies_view/best_popular_movie_item_view.dart';
+import '../view_items/home_page_view/movie_showtime_view/movie_show_time_card_view.dart';
+import '../view_items/home_page_view/movie_by_genre_view/movies_by_genres_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -11,6 +11,7 @@ class HomePageBloc extends ChangeNotifier{
   List<GetNowPlayingVO> _bestMovies=[];
   int _bestMoviePage=1;
   List<GetNowPlayingVO> _bannerMovies = [];
+
   List<GetGenresVO> _genre = [];
   List<GetNowPlayingVO> _moviesByGenre = [];
   int _genreMovieId = 0;
@@ -19,6 +20,7 @@ class HomePageBloc extends ChangeNotifier{
   //  instance
   final TmdbApply tmdbApply = TmdbApplyImpl();
   final ScrollController bestMoviesScroll=ScrollController();
+  final ScrollController genreMoviesScroll=ScrollController();
 
   //best movies getter
   bool get gDispose=>_dispose;
@@ -78,14 +80,7 @@ class HomePageBloc extends ChangeNotifier{
     });
 
     //movies by genre
-    tmdbApply.getGenres().then((value){
-      _genre=value??[];
-      _genreMovieId=_genre[0].id??0;
-      tmdbApply.getMoviesByGenre(_genreMovieId, _genreMoviePage).then((value){
-        _moviesByGenre=value??[];
-      });
-      notifyListeners();
-    });
+
 
   }
 

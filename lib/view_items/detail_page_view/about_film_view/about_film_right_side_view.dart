@@ -4,7 +4,7 @@ import 'package:moviedb_functional/data/vos/get_details_vo/get_details_vo.dart';
 
 import 'package:moviedb_functional/easy_widget/easy_text_widget.dart';
 
-import '../constant/dimens.dart';
+import '../../../constant/dimens.dart';
 
 class AboutFilmRightSideView extends StatelessWidget {
   const AboutFilmRightSideView({

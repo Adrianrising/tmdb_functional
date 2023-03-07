@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moviedb_functional/data/apply/tmdb_apply.dart';
 import 'package:moviedb_functional/data/apply/tmdb_apply_impl.dart';
-import '../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
+import '../../../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
 import 'package:moviedb_functional/easy_widget/easy_scrollable_widget.dart';
 
 class RelatedMoviesSectionView extends StatefulWidget {

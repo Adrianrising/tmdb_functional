@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:moviedb_functional/easy_widget/easy_text_widget.dart';
 
-import '../constant/dimens.dart';
-import '../constant/strings.dart';
+import '../../../constant/dimens.dart';
+import '../../../constant/strings.dart';
 import 'best_movie_scroll_view.dart';
 
 class BestPopularMovieItemView extends StatelessWidget {

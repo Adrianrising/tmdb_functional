@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:moviedb_functional/easy_widget/easy_scroll_person_widget.dart';
 
-import '../constant/dimens.dart';
-import '../constant/strings.dart';
-import '../data/apply/tmdb_apply.dart';
-import '../data/apply/tmdb_apply_impl.dart';
-import '../data/vos/get_actors_vo/get_actors_vo.dart';
+import '../../../constant/dimens.dart';
+import '../../../constant/strings.dart';
+import '../../../data/apply/tmdb_apply.dart';
+import '../../../data/apply/tmdb_apply_impl.dart';
+import '../../../data/vos/get_actors_vo/get_actors_vo.dart';
 
 class BestActorsView extends StatefulWidget {
   const BestActorsView({Key? key}) : super(key: key);

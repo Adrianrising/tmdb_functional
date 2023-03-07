@@ -7,10 +7,10 @@ import 'package:moviedb_functional/easy_widget/easy_rating_bar_widget.dart';
 import 'package:moviedb_functional/easy_widget/easy_text_widget.dart';
 import 'package:moviedb_functional/utils/extension.dart';
 
-import '../constant/colors.dart';
-import '../constant/dimens.dart';
-import '../constant/strings.dart';
-import '../easy_widget/easy_cached_network_image.dart';
+import '../../../constant/colors.dart';
+import '../../../constant/dimens.dart';
+import '../../../constant/strings.dart';
+import '../../../easy_widget/easy_cached_network_image.dart';
 
 class SliverAppBarBottomView extends StatelessWidget {
   const SliverAppBarBottomView({

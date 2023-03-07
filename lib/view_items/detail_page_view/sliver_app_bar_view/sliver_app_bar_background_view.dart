@@ -4,9 +4,9 @@ import 'package:moviedb_functional/data/vos/get_details_vo/get_details_vo.dart';
 import 'package:moviedb_functional/easy_widget/easy_linear_gradient_container_widget.dart';
 import 'package:moviedb_functional/utils/extension.dart';
 
-import '../constant/colors.dart';
-import '../constant/dimens.dart';
-import '../easy_widget/easy_cached_network_image.dart';
+import '../../../constant/colors.dart';
+import '../../../constant/dimens.dart';
+import '../../../easy_widget/easy_cached_network_image.dart';
 
 class SliverAppBarBackgroundView extends StatelessWidget {
   const SliverAppBarBackgroundView({

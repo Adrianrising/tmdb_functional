@@ -7,19 +7,19 @@ import 'package:moviedb_functional/easy_widget/easy_scroll_person_widget.dart';
 
 import 'package:moviedb_functional/easy_widget/easy_text_widget.dart';
 
-import 'package:moviedb_functional/view_items/related_movies_section_view.dart';
+import 'package:moviedb_functional/view_items/detail_page_view/related_movie_view/related_movies_section_view.dart';
 import 'package:provider/provider.dart';
 import '../constant/colors.dart';
 import '../constant/dimens.dart';
 import '../constant/strings.dart';
 import '../data/vos/get_credits_cast_vo/get_credits_cast_vo.dart';
 import '../data/vos/get_credits_crew_vo/get_credits_crew_vo.dart';
-import '../view_items/about_film_left_side_view.dart';
-import '../view_items/about_film_right_side_view.dart';
-import '../view_items/movie_genres_name_and_run_time_view.dart';
-import '../view_items/play_trailer_and_rate_movie_button_view.dart';
-import '../view_items/sliver_app_bar_background_view.dart';
-import '../view_items/sliver_app_bar_bottom_view.dart';
+import '../view_items/detail_page_view/about_film_view/about_film_left_side_view.dart';
+import '../view_items/detail_page_view/about_film_view/about_film_right_side_view.dart';
+import '../view_items/detail_page_view/movie_genres_name_and_run_time_view.dart';
+import '../view_items/detail_page_view/play_trailer_and_rate_movie_button_view.dart';
+import '../view_items/detail_page_view/sliver_app_bar_view/sliver_app_bar_background_view.dart';
+import '../view_items/detail_page_view/sliver_app_bar_view/sliver_app_bar_bottom_view.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key, required this.movieId}) : super(key: key);

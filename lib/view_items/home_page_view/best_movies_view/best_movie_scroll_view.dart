@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:moviedb_functional/bloc/home_page_bloc.dart';
 import 'package:provider/provider.dart';
-import '../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
-import '../easy_widget/easy_scrollable_widget.dart';
+import '../../../data/vos/get_now_playing_vo/get_now_playing_vo.dart';
+import '../../../easy_widget/easy_scrollable_widget.dart';
 
 class BestMovieScrollView extends StatelessWidget {
   const BestMovieScrollView({
